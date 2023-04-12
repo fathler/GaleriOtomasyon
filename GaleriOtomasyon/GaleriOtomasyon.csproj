@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B2A86CAD-9748-4AA6-942A-3F6729DAFE8A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GaleriOtomasyon</RootNamespace>
+    <AssemblyName>GaleriOtomasyon</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AracSatisSayfası.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AracSatisSayfası.Designer.cs">
+      <DependentUpon>AracSatisSayfası.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bilgi_islem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bilgi_islem.Designer.cs">
+      <DependentUpon>bilgi_islem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomElements\CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Garaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Garaj.Designer.cs">
+      <DependentUpon>Garaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AracSatisSayfası.resx">
+      <DependentUpon>AracSatisSayfası.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bilgi_islem.resx">
+      <DependentUpon>bilgi_islem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Garaj.resx">
+      <DependentUpon>Garaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Galeri.DAL\Galeri.DAL.csproj">
+      <Project>{0ace098c-f254-4a13-b54e-5e77714ff030}</Project>
+      <Name>Galeri.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Galeri.Entity\Galeri.Entity.csproj">
+      <Project>{cb5ae961-5f8c-41ed-8972-66365c04c22f}</Project>
+      <Name>Galeri.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GaleriFacade\GaleriFacade.csproj">
+      <Project>{16e0f353-a43d-4bca-82b8-6244b6bcda91}</Project>
+      <Name>GaleriFacade</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
